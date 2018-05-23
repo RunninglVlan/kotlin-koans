@@ -31,7 +31,7 @@ fun Shop.hasCustomerFrom(city: City): Boolean {
 
 fun Shop.countCustomersFrom(city: City): Int {
 	// Return the number of customers from the given city
-	return customers.filter { it.isFrom(city) }.count()
+	return customers.count { it.isFrom(city) }
 }
 
 fun Shop.findFirstCustomerFrom(city: City): Customer? {

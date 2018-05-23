@@ -16,6 +16,5 @@ fun Shop.getNumberOfTimesProductWasOrdered(product: Product): Int {
 	// Note: a customer may order the same product for several times.
 	return customers
 			.flatMap { it.orders.flatMap { it.products } }
-			.filter { it == product }
-			.count()
+			.count { it == product }
 }
