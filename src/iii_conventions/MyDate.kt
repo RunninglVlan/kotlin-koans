@@ -2,15 +2,11 @@ package iii_conventions
 
 data class MyDate(val year: Int, val month: Int, val dayOfMonth: Int) : Comparable<MyDate> {
 	override fun compareTo(other: MyDate): Int {
-		var result = this.year - other.year
-		if (result != 0) {
-			return result
+		return when {
+			this.year != other.year -> this.year - other.year
+			this.month != other.month -> this.month - other.month
+			else -> this.dayOfMonth - other.dayOfMonth
 		}
-		result = this.month - other.month
-		if (result != 0) {
-			return result
-		}
-		return this.dayOfMonth - other.dayOfMonth
 	}
 
 	operator fun rangeTo(other: MyDate): DateRange = DateRange(this, other)
@@ -30,17 +26,14 @@ class TimeInterval(val unit: TimeUnit, val number: Int)
 
 class DateRange(override val start: MyDate, override val endInclusive: MyDate) : ClosedRange<MyDate>, Iterable<MyDate> {
 	override fun iterator() = object : Iterator<MyDate> {
-		var current: MyDate? = null
+		var current: MyDate = start
 
-		override fun hasNext() = if (current == null) start <= endInclusive else current!! < endInclusive
+		override fun hasNext() = current <= endInclusive
 
 		override fun next(): MyDate {
-			current = if (current == null) {
-				start
-			} else {
-				current!!.nextDay()
-			}
-			return current as MyDate
+			val next = current
+			current = current.nextDay()
+			return next
 		}
 	}
 }
