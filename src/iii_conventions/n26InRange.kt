@@ -3,6 +3,7 @@ package iii_conventions
 import util.TODO
 import util.doc26
 
+@Suppress("UNUSED_ANONYMOUS_PARAMETER")
 fun todoTask26_(): Nothing = TODO("""
         Task 26.
         Uncomment the commented line and make it compile.

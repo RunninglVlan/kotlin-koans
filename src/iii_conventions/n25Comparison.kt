@@ -3,6 +3,7 @@ package iii_conventions
 import util.TODO
 import util.doc25
 
+@Suppress("UNUSED_ANONYMOUS_PARAMETER")
 fun todoTask25(): Nothing = TODO("""
         Task 25.
         Uncomment the commented line and make it compile. 
@@ -17,4 +18,3 @@ fun todoTask25(): Nothing = TODO("""
 fun task25(date1: MyDate, date2: MyDate): Boolean {
 	return date1 < date2
 }
-

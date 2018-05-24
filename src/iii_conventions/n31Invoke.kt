@@ -11,6 +11,7 @@ class Invokable(private var invocations: Int = 0) {
 	fun getNumberOfInvocations() = invocations
 }
 
+@Suppress("UNUSED_ANONYMOUS_PARAMETER")
 fun todoTask31(): Nothing = TODO("""
         Task 31.
         Change the class 'Invokable' to count the number of invocations:
