@@ -1,6 +1,6 @@
 package iii_conventions
 
-import iii_conventions.TimeInterval.*
+import iii_conventions.TimeUnit.*
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package iii_conventions.multiAssignemnt
+package iii_conventions
 
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
